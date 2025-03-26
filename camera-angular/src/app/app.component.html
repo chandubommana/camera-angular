@@ -1,0 +1,15 @@
+<div class="col d-flex align-items-center gap-2">
+  <label for="image" class="form-label mb-0">Image:</label>
+  <input type="file" id="image" class="form-control w-50" 
+   (change)="onFileChange($event)">
+  <button class="btn btn-primary w-25 p-2" type="button" (click)="checkPermissions()">Capture Image</button>
+</div>
+
+  <div class="row border border-danger mt-2">
+  
+    <div *ngIf="stream" class="col-md-6 text-center">
+      <div class="border p-2 rounded">
+        <webcam class="webcam img-fluid" [trigger]="$trigger" (imageCapture)="snapshot($event)"></webcam>
+        <button class="btn btn-success mt-2" type="button" (click)="captureImage()">Take a Image</button>
+      </div>
+    </div>
