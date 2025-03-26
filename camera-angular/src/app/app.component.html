@@ -12,4 +12,10 @@
         <webcam class="webcam img-fluid" [trigger]="$trigger" (imageCapture)="snapshot($event)"></webcam>
         <button class="btn btn-success mt-2" type="button" (click)="captureImage()">Take a Image</button>
       </div>
+      <div class="col-md-6 text-center" *ngIf="showImage">
+        <div class="border p-2 rounded">
+          <h6>Preview</h6>
+          <img [src]="showImage" class="img-fluid" >
+        </div>
+      </div>
     </div>
